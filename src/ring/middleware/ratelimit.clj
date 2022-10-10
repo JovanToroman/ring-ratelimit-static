@@ -48,6 +48,8 @@
                                "X-RateLimit-Remaining" (if is-over "0" (str remaining))}
                    h (if is-over err-handler handler)
                    rsp (h req)]
-               (assoc rsp :headers (merge (:headers rsp) rl-headers)))
+               (if (map? rsp)
+                 (assoc rsp :headers (merge (:headers rsp) rl-headers))
+                 rsp))
              (handler req)))
          (handler req))))))
