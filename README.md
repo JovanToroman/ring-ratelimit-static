@@ -1,3 +1,5 @@
+The way in which this fork differs from the upstream project is by allowing for rate limiting for requests to a web server, as well, next to request to API which were already supported. Requests from a web server, which had a string as a response, were throwing a type exception.
+
 Current [semantic](http://semver.org/) version:
 
 ```clojure
